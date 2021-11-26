@@ -1,0 +1,87 @@
+HeapSort and BubbleSort Project
+Comp160
+Tim Seifert
+
+
+How Was it Built:
+
+This project seeks to show that heapsort is a more efficient sorting algorithm
+than bubble sort. The code is built in one cpp file as the implementation of 
+both heapsort and bubble sort don't require class or object abstraction. They are broken
+up to their respective function names bubbleSort and heapSort and then run on
+seperate threads to compete for completion time. They both print out
+the overall runtime in seconds after completion. 
+
+Design and Flow:
+
+Create different array sizes to be the input of both bubble sort and heap sort.
+
+Arrays -> threads of bubble sort and heapsort -> join threads -> print when they
+finish
+
+The above flow is the general layout the driving code behind what is happening.
+
+
+Testing:
+
+The first test run on the algorithms are for general functional correctness, the
+same array is run through both sorting arrays and spit out to terminal output
+to visually see the correctness of both algos. It is clear to see from this 
+whether the arrays are sorted or not. Past this point larger arrays are run in
+threads to compete against runtime. All of the tests are randomly generated each
+time, ensuring that the functions are valid for multiple runs.
+
+Qualitative Test:
+There is a built in unit test for checking the arrays numbers with each other, 
+every previous number should be less than the next number. This unit test
+is run on a small initial test.
+
+
+What's New:
+
+Multi-Threading is a form of coding which typically is applied to programs to 
+speed up operations. Using multithreading in this case, we can race algorithms
+at the very same time. Instead of running algorithms one at a time on the call
+stack, we can do everything at once. I believe that this feature of my code is
+what goes above the normal expectation.
+
+Utilizing C++ clocks. Using clocks are an effective way to see the actual precise
+runtime of an algorithm.
+
+Heap sort and bubble sort are kept to there normal implementation, besides some
+threading and clock print statmenets.
+
+
+Conlusions:
+
+It is clear from the times and the multithreading functionality of this code
+that heapsort is significantly faster than bubble sort. 
+
+
+What I learned:
+
+Multi-threading is really cool. You can run processes in parallel. I also learned
+about the implenetations of Bubble Sort and Heap Sort respectively. Implementing
+both of them in the project. I lastly learned firsthand that the runtime of 
+heapsort is substantially better than bubblesort.
+
+ I also 
+learned how to profile algorithms through the c++ clock library.
+
+How to Compile:
+
+clang++ -std=c++11 codingproject.cpp
+
+run with ./a.out
+
+
+Credit:
+I used https://www.geeksforgeeks.org/heap-sort/ for a reference on how heap sort
+works and a general implementation.
+I used https://www.geeksforgeeks.org/bubble-sort/ for a reference on how bubble sort
+works and a general implementation.
+
+
+
+
+
